@@ -1,38 +1,60 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.hero {
+  width: 100%;
   min-height: 100vh;
+  background: #5555ab;
+  color: #ffff;
+  display: flex;
+}
+.hero .container {
+  width: 100%;
+  max-width: 400px;
+  margin: auto;
+  padding: 30px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  background: #050517;
+}
+
+.hero .container .randomNum {
+  background: #181831;
+  padding: 20px;
+}
+.hero.container.randomNum p span {
+  color: #9cdd9c;
+  font-weight: 600;
+}
+
+.hero .numContainer {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 60px 0;
+  width: 100%;
 }
-
-.App-link {
-  color: #61dafb;
+.hero .numContainer div {
+  width: 100%;
+  max-width: 42%;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.hero .numContainer div input {
+  padding: 8px;
+  border: none;
+  outline: none;
+  width: 100%;
+  background: #181831;
+  color: #9cdd9c;
+}
+.hero .container button {
+  align-self: flex-end;
+  border: none;
+  outline: none;
+  background: #292977;
+  padding: 14px;
+  font-size: 22px;
+  cursor: pointer;
+  color: #ffff;
 }

@@ -1,23 +1,41 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
 
+
 function App() {
+  const [min, setMin] = useState(0)
+  const [max, setMax] = useState(10)
+  const [guess, setGuess] = useState((Math.floor(Math.random() * (max - min + 1) + min)))
+  const handelRandomNumber = () => {
+    setGuess(Math.floor(Math.random() * (max - min + 1) + min))
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+
+    <div className="hero">
+      <div className="container">
+        <div className="randomNum">
+          <p>Random Number <span>{guess}</span> </p>
+
+        </div>
+        <div className="numContainer">
+          <div>
+            <p>
+              Min:
+            </p>
+            <input type="number" value={min} onChange={(e) => setMin(+e.target.value)} />
+          </div>
+          <div>
+            <p>
+              Max :
+            </p>
+            <input type="number" value={max} onChange={(e) => setMax(+e.target.value)} />
+          </div>
+        </div>
+        <button onClick={handelRandomNumber} >Get random number</button>
+      </div>
+
     </div>
   );
 }
